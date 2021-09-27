@@ -58,10 +58,27 @@ function App() {
 
   };
 
+  const findLetters = () => {
+    const arrayOfLetters = word.split("");
+    console.log(arrayOfLetters);
+    return arrayOfLetters.filter( (letter) => {
+      console.log(letter === lastLetter);
+      return letter === lastLetter;
+    })
+  }
+  findLetters();
+
+
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
     return wordLetters.map( (letter,index) => { 
-      return <li key={index} className="letter"></li>
+      if(letter === lastLetter){
+        return <li key={index} className="letter">{letter}</li>
+      }
+      else {
+        return <li key={index} className="letter"></li>
+      }
+      
     });
   }
 
