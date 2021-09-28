@@ -21,13 +21,13 @@ function App() {
     function verificar() {
       const valido = validar();
       if (!valido) {
-        alert('El campo no es válido.');
-      } else {
-        alert('El campo es válido');
+        //userLetters.push(ev.target.value);
+        setUserLetters([...userLetters, lastLetter]);
       }
+
     }
     verificar();
-    return setLastLetter(ev.target.value);
+     setLastLetter(ev.target.value);
 
 
     // La siguiente funcion valida el elemento input
@@ -57,22 +57,21 @@ function App() {
     }
 
   };
-
   const findLetters = () => {
     const arrayOfLetters = word.split("");
-    console.log(arrayOfLetters);
     return arrayOfLetters.filter( (letter) => {
-      console.log(letter === lastLetter);
-      return letter === lastLetter;
+      for (const userLetter of userLetters){
+      return letter === userLetter;
+    }
+
     })
   }
-  findLetters();
 
 
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
     return wordLetters.map( (letter,index) => { 
-      if(letter === lastLetter){
+      if(findLetters()){
         return <li key={index} className="letter">{letter}</li>
       }
       else {
