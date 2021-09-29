@@ -20,9 +20,9 @@ function App() {
       // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
     function verificar() {
       const valido = validar();
-      if (!valido) {
+      if (valido) {
         //userLetters.push(ev.target.value);
-        setUserLetters([...userLetters, lastLetter]);
+        setUserLetters([...userLetters, ev.target.value]);
       }
 
     }
@@ -57,21 +57,24 @@ function App() {
     }
 
   };
-  const findLetters = () => {
-    const arrayOfLetters = word.split("");
-    return arrayOfLetters.filter( (letter) => {
-      for (const userLetter of userLetters){
-      return letter === userLetter;
-    }
+  const findLetters = (letter) => {
+    // const arrayOfLetters = word.split("");
+    // return arrayOfLetters.filter( (letter) => {
+    //   for (const userLetter of userLetters){
+    //   return letter === userLetter;
+    // }
 
-    })
+    // })
+    return userLetters.find( (userLetter) => {
+      return userLetter === letter;
+    } )
   }
 
 
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
     return wordLetters.map( (letter,index) => { 
-      if(findLetters()){
+      if(findLetters(letter)){
         return <li key={index} className="letter">{letter}</li>
       }
       else {
@@ -80,6 +83,8 @@ function App() {
       
     });
   }
+
+  // const renderErrorLetters 
 
   return (
     <div className="page">
