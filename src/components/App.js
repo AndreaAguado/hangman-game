@@ -14,20 +14,35 @@ function App() {
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('patricia');
   const [userLetters, setUserLetters] = useState([]);
+  const [incorrectLetters, setIncorrectLetters] = useState([]);
 
   const handleLastLetter = (ev) => {
     console.log(ev.target.value);
-      // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
+    // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
     function verificar() {
       const valido = validar();
       if (valido) {
         //userLetters.push(ev.target.value);
         setUserLetters([...userLetters, ev.target.value]);
+
+        let chosenLetters;
+        const arrayOfLetters = word.split("");
+        for (const letter of arrayOfLetters) {
+          chosenLetters = userLetters.filter(userLetter => userLetter !== letter)
+        }
+        setIncorrectLetters([...incorrectLetters,]);
+        // return userLetters.filter((userLetter) => {
+        //   for (const letter of arrayOfLetters) {
+        //     if (userLetter !== letter) {
+        //       setIncorrectLetters([...incorrectLetters, userLetter]);
+        //     }
+        //   }
+        // })
       }
 
     }
     verificar();
-     setLastLetter(ev.target.value);
+    setLastLetter(ev.target.value);
 
 
     // La siguiente funcion valida el elemento input
@@ -39,13 +54,13 @@ function App() {
       const pattern = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1]$');
 
       // Primera validacion, si input esta vacio entonces no es valido
-      if(!ev.target.value) {
+      if (!ev.target.value) {
         isValid = false;
       } else {
-      // Tercera validacion, si input contiene caracteres diferentes a los permitidos
-      if(!pattern.test(ev.target.value)){ 
-        // Si queremos agregar letras acentuadas y/o letra ñ debemos usar
-        // codigos de Unicode (ejemplo: Ñ: \u00D1  ñ: \u00F1)
+        // Tercera validacion, si input contiene caracteres diferentes a los permitidos
+        if (!pattern.test(ev.target.value)) {
+          // Si queremos agregar letras acentuadas y/o letra ñ debemos usar
+          // codigos de Unicode (ejemplo: Ñ: \u00D1  ñ: \u00F1)
           isValid = false;
         } else {
           // Si pasamos todas la validaciones anteriores, entonces el input es valido
@@ -58,33 +73,31 @@ function App() {
 
   };
   const findLetters = (letter) => {
-    // const arrayOfLetters = word.split("");
-    // return arrayOfLetters.filter( (letter) => {
-    //   for (const userLetter of userLetters){
-    //   return letter === userLetter;
-    // }
-
-    // })
-    return userLetters.find( (userLetter) => {
+    return userLetters.find((userLetter) => {
       return userLetter === letter;
-    } )
+    })
   }
 
 
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
-    return wordLetters.map( (letter,index) => { 
-      if(findLetters(letter)){
+    return wordLetters.map((letter, index) => {
+      if (findLetters(letter)) {
         return <li key={index} className="letter">{letter}</li>
       }
       else {
         return <li key={index} className="letter"></li>
       }
-      
+
     });
   }
 
-  // const renderErrorLetters 
+  const renderErrorLetters = () => {
+    return incorrectLetters.map((incorrectLetter, index) => {
+      return <li key={index} className="letter">{incorrectLetter}</li>
+    })
+
+  }
 
   return (
     <div className="page">
@@ -96,7 +109,7 @@ function App() {
           <div className="solution">
             <h2 className="title">Solución:</h2>
             <ul className="letters">
-             {renderSolutionLetters()}
+              {renderSolutionLetters()}
               {/* <li className="letter">k</li>
               <li className="letter">a</li>
               <li className="letter"></li>
@@ -107,17 +120,18 @@ function App() {
               <li className="letter">k</li>
               <li className="letter">e</li>
               <li className="letter">r</li> */}
-               
+
             </ul>
           </div>
           <div className="feedback">
             <h2 className="title">Letras falladas:</h2>
             <ul className="letters">
-              <li className="letter">f</li>
+              {renderErrorLetters()}
+              {/* <li className="letter">f</li>
               <li className="letter">q</li>
               <li className="letter">h</li>
               <li className="letter">p</li>
-              <li className="letter">x</li>
+              <li className="letter">x</li> */}
             </ul>
           </div>
           <form className="form">
