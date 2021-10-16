@@ -17,18 +17,21 @@ function App() {
   }, []);
 
   const handleLastLetter = (ev) => {
-
+    setLastLetter(ev.target.value);
     const valido = validar();
     if (valido) {
-      setUserLetters([...userLetters, ev.target.value]);
-      let chosenLetters = userLetters.filter((userLetter) => {
-        return !word.includes(userLetter);
+      const isIn = userLetters.find((userLetter) => {
+        return userLetter === ev.target.value;
       })
-      console.log(chosenLetters);
-      setIncorrectLetters(chosenLetters);
+      if (!isIn) {
+        setUserLetters([...userLetters, ev.target.value]);
+        let chosenLetters = userLetters.filter((userLetter) => {
+          return !word.includes(userLetter);
+        })
+        console.log(chosenLetters);
+        setIncorrectLetters(chosenLetters);
+      }
     }
-
-    setLastLetter(ev.target.value);
 
     nErrors = incorrectLetters.length;
     setError(nErrors);
