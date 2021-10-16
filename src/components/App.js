@@ -1,4 +1,3 @@
-// Fichero src/components/App.js
 import '../styles/main.scss';
 import { useState } from 'react';
 
@@ -21,14 +20,15 @@ function App() {
     // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
     const valido = validar();
     if (valido) {
-
       setUserLetters([...userLetters, ev.target.value]);
-
       let chosenLetters = userLetters.filter((userLetter) => {
+        console.log('here');
+        console.log(!word.includes(userLetter));
         return !word.includes(userLetter);
       })
       console.log(chosenLetters);
       setIncorrectLetters(chosenLetters);
+
     }
 
     setLastLetter(ev.target.value);
@@ -85,7 +85,6 @@ function App() {
     return incorrectLetters.map((incorrectLetter, index) => {
       return <li key={index} className="letter">{incorrectLetter}</li>
     })
-
   }
 
   return (
@@ -99,28 +98,12 @@ function App() {
             <h2 className="title">Solución:</h2>
             <ul className="letters">
               {renderSolutionLetters()}
-              {/* <li className="letter">k</li>
-              <li className="letter">a</li>
-              <li className="letter"></li>
-              <li className="letter">a</li>
-              <li className="letter">k</li>
-              <li className="letter">r</li>
-              <li className="letter"></li>
-              <li className="letter">k</li>
-              <li className="letter">e</li>
-              <li className="letter">r</li> */}
-
             </ul>
           </div>
           <div className="feedback">
             <h2 className="title">Letras falladas:</h2>
             <ul className="letters">
               {renderErrorLetters()}
-              {/* <li className="letter">f</li>
-              <li className="letter">q</li>
-              <li className="letter">h</li>
-              <li className="letter">p</li>
-              <li className="letter">x</li> */}
             </ul>
           </div>
           <form className="form">
