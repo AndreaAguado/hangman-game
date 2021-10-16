@@ -32,6 +32,9 @@ function App() {
         setIncorrectLetters(chosenLetters);
       }
     }
+    else {
+      alert('Ese cáracter no es válido');
+    }
 
     nErrors = incorrectLetters.length;
     setError(nErrors);
@@ -81,6 +84,13 @@ function App() {
       return <li key={index} className="letter">{incorrectLetter}</li>
     })
   }
+
+  const youLost = () => {
+    if (error === 13) {
+      console.log('you lost');
+    }
+  }
+  youLost();
 
   return (
     <div className="page">
