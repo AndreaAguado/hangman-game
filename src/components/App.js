@@ -32,9 +32,6 @@ function App() {
         setIncorrectLetters(chosenLetters);
       }
     }
-    else {
-      alert('Ese cáracter no es válido');
-    }
 
     nErrors = incorrectLetters.length;
     setError(nErrors);
