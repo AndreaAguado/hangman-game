@@ -98,7 +98,7 @@ function App() {
               {renderErrorLetters()}
             </ul>
           </div>
-          <form className="form">
+          <form className="form" onSubmit={ev => ev.preventDefault()}>
             <label className="title" htmlFor="last-letter">
               Escribe una letra:
             </label>
