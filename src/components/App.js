@@ -4,11 +4,11 @@ import { useState } from 'react';
 function App() {
   let nErrors = 0;
   const [error, setError] = useState(0);
-  const numberOfErrors = (ev) => {
-    nErrors = error + 1;
-    console.log(nErrors);
-    return setError(nErrors);
-  };
+  // const numberOfErrors = (ev) => {
+  //   nErrors = error + 1;
+  //   console.log(nErrors);
+  //   return setError(nErrors);
+  // };
 
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('patricia');
@@ -28,10 +28,12 @@ function App() {
       })
       console.log(chosenLetters);
       setIncorrectLetters(chosenLetters);
-
     }
 
     setLastLetter(ev.target.value);
+
+    nErrors = incorrectLetters.length;
+    setError(nErrors);
 
     // La siguiente funcion valida el elemento input
     function validar() {
@@ -123,7 +125,7 @@ function App() {
           </form>
         </section>
         <section className={`dummy error-${error}`}>
-          <button onClick={numberOfErrors}>Incrementar</button>
+          {/* <button onClick={numberOfErrors}>Incrementar</button> */}
           <span className="error-13 eye"></span>
           <span className="error-12 eye"></span>
           <span className="error-11 line"></span>
