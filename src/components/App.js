@@ -1,19 +1,21 @@
 import '../styles/main.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import callToApi from '../services/callToApi';
 
 function App() {
   let nErrors = 0;
   const [error, setError] = useState(0);
-  // const numberOfErrors = (ev) => {
-  //   nErrors = error + 1;
-  //   console.log(nErrors);
-  //   return setError(nErrors);
-  // };
 
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('patricia');
   const [userLetters, setUserLetters] = useState([]);
   const [incorrectLetters, setIncorrectLetters] = useState([]);
+
+  useEffect(() => {
+    callToApi().then(response => {
+      setWord(response);
+    })
+  }, []);
 
   const handleLastLetter = (ev) => {
     console.log(ev.target.value);
@@ -125,7 +127,6 @@ function App() {
           </form>
         </section>
         <section className={`dummy error-${error}`}>
-          {/* <button onClick={numberOfErrors}>Incrementar</button> */}
           <span className="error-13 eye"></span>
           <span className="error-12 eye"></span>
           <span className="error-11 line"></span>
