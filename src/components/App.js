@@ -19,31 +19,19 @@ function App() {
   const handleLastLetter = (ev) => {
     console.log(ev.target.value);
     // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
-    function verificar() {
-      const valido = validar();
-      if (valido) {
-        //userLetters.push(ev.target.value);
-        setUserLetters([...userLetters, ev.target.value]);
+    const valido = validar();
+    if (valido) {
 
-        let chosenLetters;
-        const arrayOfLetters = word.split("");
-        for (const letter of arrayOfLetters) {
-          chosenLetters = userLetters.filter(userLetter => userLetter !== letter)
-        }
-        setIncorrectLetters([...incorrectLetters,]);
-        // return userLetters.filter((userLetter) => {
-        //   for (const letter of arrayOfLetters) {
-        //     if (userLetter !== letter) {
-        //       setIncorrectLetters([...incorrectLetters, userLetter]);
-        //     }
-        //   }
-        // })
-      }
+      setUserLetters([...userLetters, ev.target.value]);
 
+      let chosenLetters = userLetters.filter((userLetter) => {
+        return !word.includes(userLetter);
+      })
+      console.log(chosenLetters);
+      setIncorrectLetters(chosenLetters);
     }
-    verificar();
-    setLastLetter(ev.target.value);
 
+    setLastLetter(ev.target.value);
 
     // La siguiente funcion valida el elemento input
     function validar() {
@@ -72,12 +60,13 @@ function App() {
     }
 
   };
+  // end of handleLastLetter()
+
   const findLetters = (letter) => {
     return userLetters.find((userLetter) => {
       return userLetter === letter;
     })
   }
-
 
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
