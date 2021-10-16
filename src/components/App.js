@@ -7,7 +7,7 @@ function App() {
   const [error, setError] = useState(0);
 
   const [lastLetter, setLastLetter] = useState('');
-  const [word, setWord] = useState('patricia');
+  const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
   const [incorrectLetters, setIncorrectLetters] = useState([]);
 
