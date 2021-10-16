@@ -5,7 +5,6 @@ import callToApi from '../services/callToApi';
 function App() {
   let nErrors = 0;
   const [error, setError] = useState(0);
-
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
@@ -18,14 +17,11 @@ function App() {
   }, []);
 
   const handleLastLetter = (ev) => {
-    console.log(ev.target.value);
-    // Por último, nuestra función que verifica si el campo es válido antes de realizar cualquier otra acción.
+
     const valido = validar();
     if (valido) {
       setUserLetters([...userLetters, ev.target.value]);
       let chosenLetters = userLetters.filter((userLetter) => {
-        console.log('here');
-        console.log(!word.includes(userLetter));
         return !word.includes(userLetter);
       })
       console.log(chosenLetters);
@@ -37,29 +33,21 @@ function App() {
     nErrors = incorrectLetters.length;
     setError(nErrors);
 
-    // La siguiente funcion valida el elemento input
     function validar() {
-      // Variable que usaremos para determinar si el input es valido
-      let isValid = false;
-      // El pattern que vamos a comprobar
-      // const pattern = new RegExp('^[A-Z\u00D1\u00F1]$', 'i');
+      let isValid;
+      // pattern to match:
       const pattern = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1]$');
-
-      // Primera validacion, si input esta vacio entonces no es valido
+      //if input is empty it won't be valid:
       if (!ev.target.value) {
         isValid = false;
       } else {
-        // Tercera validacion, si input contiene caracteres diferentes a los permitidos
+        //if input doesn't match the permitted pattern it won't be valid:
         if (!pattern.test(ev.target.value)) {
-          // Si queremos agregar letras acentuadas y/o letra ñ debemos usar
-          // codigos de Unicode (ejemplo: Ñ: \u00D1  ñ: \u00F1)
           isValid = false;
         } else {
-          // Si pasamos todas la validaciones anteriores, entonces el input es valido
           isValid = true;
         }
       }
-      // devolvemos el valor de isValid
       return isValid;
     }
 
