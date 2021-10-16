@@ -57,6 +57,16 @@ function App() {
   };
   // end of handleLastLetter()
 
+  // useEffect(() => {
+  //   let chosenLetters = userLetters.filter((userLetter) => {
+  //     return !word.includes(userLetter);
+  //   })
+  //   console.log(chosenLetters);
+  //   setIncorrectLetters(chosenLetters);
+  //   // nErrors = incorrectLetters.length;
+  //   setError(incorrectLetters.length);
+  // }, [userLetters])
+
   const findLetters = (letter) => {
     return userLetters.find((userLetter) => {
       return userLetter === letter;
