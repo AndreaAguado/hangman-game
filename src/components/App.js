@@ -80,11 +80,11 @@ function App() {
     })
   }
 
-  const youLost = () => {
-    if (calcErrors() === 13) {
-      console.log('you lost');
-    }
-  }
+  // const youLost = () => {
+  //   if (calcErrors() === 13) {
+  //     console.log('you lost');
+  //   }
+  // }
   // youLost();
 
   const calcErrors = () => {
