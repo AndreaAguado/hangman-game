@@ -4,8 +4,8 @@ import callToApi from '../services/callToApi';
 import Header from './Header';
 
 function App() {
-  let nErrors = 0;
-  const [error, setError] = useState(0);
+  let nErrors;
+  // let wrongLetters;
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
@@ -27,8 +27,6 @@ function App() {
         setUserLetters([...userLetters, ev.target.value]);
       }
     }
-
-    setError(nErrors);
 
     function validar() {
       let isValid;
@@ -70,22 +68,29 @@ function App() {
     });
   }
 
-
-  const renderErrorLetters = () => {
+  const findWrongLetters = () => {
     let wrongLetters = userLetters.filter((userLetter) => {
       return !word.includes(userLetter);
     })
-    return wrongLetters.map((incorrectLetter, index) => {
+    return wrongLetters;
+  }
+  const renderErrorLetters = () => {
+    return findWrongLetters().map((incorrectLetter, index) => {
       return <li key={index} className="letter">{incorrectLetter}</li>
     })
   }
 
   const youLost = () => {
-    if (error === 13) {
+    if (calcErrors() === 13) {
       console.log('you lost');
     }
   }
-  youLost();
+  // youLost();
+
+  const calcErrors = () => {
+    nErrors = findWrongLetters().length;
+    return nErrors;
+  }
 
   return (
     <div className="page">
@@ -120,7 +125,7 @@ function App() {
             />
           </form>
         </section>
-        <section className={`dummy error-${error}`}>
+        <section className={`dummy error-${calcErrors()}`}>
           <span className="error-13 eye"></span>
           <span className="error-12 eye"></span>
           <span className="error-11 line"></span>
