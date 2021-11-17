@@ -9,7 +9,6 @@ function App() {
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
-  const [incorrectLetters, setIncorrectLetters] = useState([]);
 
   useEffect(() => {
     callToApi().then(response => {
@@ -26,15 +25,9 @@ function App() {
       })
       if (!isIn) {
         setUserLetters([...userLetters, ev.target.value]);
-        let chosenLetters = userLetters.filter((userLetter) => {
-          return !word.includes(userLetter);
-        })
-        console.log(chosenLetters);
-        setIncorrectLetters(chosenLetters);
       }
     }
 
-    nErrors = incorrectLetters.length;
     setError(nErrors);
 
     function validar() {
@@ -58,16 +51,6 @@ function App() {
   };
   // end of handleLastLetter()
 
-  // useEffect(() => {
-  //   let chosenLetters = userLetters.filter((userLetter) => {
-  //     return !word.includes(userLetter);
-  //   })
-  //   console.log(chosenLetters);
-  //   setIncorrectLetters(chosenLetters);
-  //   // nErrors = incorrectLetters.length;
-  //   setError(incorrectLetters.length);
-  // }, [userLetters])
-
   const findLetters = (letter) => {
     return userLetters.find((userLetter) => {
       return userLetter === letter;
@@ -87,8 +70,12 @@ function App() {
     });
   }
 
+
   const renderErrorLetters = () => {
-    return incorrectLetters.map((incorrectLetter, index) => {
+    let wrongLetters = userLetters.filter((userLetter) => {
+      return !word.includes(userLetter);
+    })
+    return wrongLetters.map((incorrectLetter, index) => {
       return <li key={index} className="letter">{incorrectLetter}</li>
     })
   }
