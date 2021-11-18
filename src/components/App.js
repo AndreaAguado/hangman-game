@@ -2,13 +2,11 @@ import '../styles/main.scss';
 import { useState, useEffect } from 'react';
 import callToApi from '../services/callToApi';
 import Header from './Header';
-import Dummy from './Dummy';
-import SolutionLetters from './SolutionLetters';
-import ErrorLetters from './ErrorLetters';
-import Form from './Form';
+import Game from './Game';
 import Footer from './Footer';
 import Instructions from './Instructions';
 import { Routes, Route } from 'react-router-dom';
+
 
 
 function App() {
@@ -103,14 +101,12 @@ function App() {
   return (
     <div className="page">
       <Header></Header>
-      <main className="main">
-        <section>
-          <SolutionLetters renderSolutionLetters={renderSolutionLetters}></SolutionLetters>
-          <ErrorLetters renderErrorLetters={renderErrorLetters}></ErrorLetters>
-          <Form handleLastLetter={handleLastLetter} lastLetter={lastLetter}></Form>
-        </section>
-        <Dummy calcErrors={calcErrors}></Dummy>
-      </main>
+      <Game renderSolutionLetters={renderSolutionLetters}
+        renderErrorLetters={renderErrorLetters}
+        handleLastLetter={handleLastLetter}
+        lastLetter={lastLetter}
+        calcErrors={calcErrors}>
+      </Game>
       <Footer></Footer>
       <Routes>
         <Route path="/" element={<Header></Header>} />
