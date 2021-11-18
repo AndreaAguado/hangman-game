@@ -6,8 +6,10 @@ import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
 import Form from './Form';
-import { Routes, Route } from 'react-router-dom';
 import Footer from './Footer';
+import Instructions from './Instructions';
+import { Routes, Route } from 'react-router-dom';
+
 
 function App() {
   let nErrors;
@@ -111,7 +113,9 @@ function App() {
       </main>
       <Footer></Footer>
       <Routes>
-        {/* <Route path="/" element={ }></Route> */}
+        <Route path="/" element={<Header></Header>} />
+        <Route path="/instructions" element={<Instructions></Instructions>} />
+
       </Routes>
     </div>
   );
