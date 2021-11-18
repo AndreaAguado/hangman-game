@@ -107,6 +107,15 @@ function App() {
         </section>
         <Dummy calcErrors={calcErrors}></Dummy>
       </main>
+      <footer>
+        <nav>
+          <ul>
+            <li>A jugar</li>
+            <li>¿Cómo se juega?</li>
+            <li>Más opciones</li>
+          </ul>
+        </nav>
+      </footer>
     </div>
   );
 }
