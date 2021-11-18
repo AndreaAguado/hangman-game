@@ -5,6 +5,7 @@ import Header from './Header';
 import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
+import Form from './Form';
 
 function App() {
   let nErrors;
@@ -102,21 +103,7 @@ function App() {
         <section>
           <SolutionLetters renderSolutionLetters={renderSolutionLetters}></SolutionLetters>
           <ErrorLetters renderErrorLetters={renderErrorLetters}></ErrorLetters>
-          <form className="form" onSubmit={ev => ev.preventDefault()}>
-            <label className="title" htmlFor="last-letter">
-              Escribe una letra:
-            </label>
-            <input
-              onChange={handleLastLetter}
-              autoComplete="off"
-              className="form__input"
-              maxLength="1"
-              type="text"
-              name="last-letter"
-              id="last-letter"
-              value={lastLetter}
-            />
-          </form>
+          <Form handleLastLetter={handleLastLetter} lastLetter={lastLetter}></Form>
         </section>
         <Dummy calcErrors={calcErrors}></Dummy>
       </main>
