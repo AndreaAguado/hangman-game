@@ -6,7 +6,8 @@ import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
 import Form from './Form';
-import { Link, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
+import Footer from './Footer';
 
 function App() {
   let nErrors;
@@ -108,15 +109,7 @@ function App() {
         </section>
         <Dummy calcErrors={calcErrors}></Dummy>
       </main>
-      <footer>
-        <nav>
-          <ul>
-            <li><Link to="/">A jugar</Link></li>
-            <li><Link to="/instructions">¿Cómo se juega?</Link></li>
-            <li><Link to="/options">Más opciones</Link></li>
-          </ul>
-        </nav>
-      </footer>
+      <Footer></Footer>
       <Routes>
         {/* <Route path="/" element={ }></Route> */}
       </Routes>
