@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import callToApi from '../services/callToApi';
 import Header from './Header';
 import Dummy from './Dummy';
+import SolutionLetters from './SolutionLetters';
 
 function App() {
   let nErrors;
@@ -98,12 +99,7 @@ function App() {
       <Header></Header>
       <main className="main">
         <section>
-          <div className="solution">
-            <h2 className="title">Solución:</h2>
-            <ul className="letters">
-              {renderSolutionLetters()}
-            </ul>
-          </div>
+          <SolutionLetters renderSolutionLetters={renderSolutionLetters}></SolutionLetters>
           <div className="feedback">
             <h2 className="title">Letras falladas:</h2>
             <ul className="letters">
