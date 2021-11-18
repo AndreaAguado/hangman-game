@@ -4,6 +4,7 @@ import callToApi from '../services/callToApi';
 import Header from './Header';
 import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
+import ErrorLetters from './ErrorLetters';
 
 function App() {
   let nErrors;
@@ -100,12 +101,7 @@ function App() {
       <main className="main">
         <section>
           <SolutionLetters renderSolutionLetters={renderSolutionLetters}></SolutionLetters>
-          <div className="feedback">
-            <h2 className="title">Letras falladas:</h2>
-            <ul className="letters">
-              {renderErrorLetters()}
-            </ul>
-          </div>
+          <ErrorLetters renderErrorLetters={renderErrorLetters}></ErrorLetters>
           <form className="form" onSubmit={ev => ev.preventDefault()}>
             <label className="title" htmlFor="last-letter">
               Escribe una letra:
