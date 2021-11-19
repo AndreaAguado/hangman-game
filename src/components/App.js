@@ -101,18 +101,19 @@ function App() {
   return (
     <div className="page">
       <Header></Header>
-      <Game renderSolutionLetters={renderSolutionLetters}
-        renderErrorLetters={renderErrorLetters}
-        handleLastLetter={handleLastLetter}
-        lastLetter={lastLetter}
-        calcErrors={calcErrors}>
-      </Game>
-      <Footer></Footer>
+
       <Routes>
-        <Route path="/" element={<Header></Header>} />
-        <Route path="/instructions" element={<Instructions></Instructions>} />
+        <Route path="/" element={<Game renderSolutionLetters={renderSolutionLetters}
+          renderErrorLetters={renderErrorLetters}
+          handleLastLetter={handleLastLetter}
+          lastLetter={lastLetter}
+          calcErrors={calcErrors}>
+        </Game>} />
+        <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
 
       </Routes>
+      <Footer></Footer>
+
     </div>
   );
 }

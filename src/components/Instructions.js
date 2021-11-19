@@ -1,17 +1,23 @@
-const Instructions = () => {
+import '../styles/components/Instructions.scss';
+import Dummy from "./Dummy";
+
+const Instructions = (props) => {
     return (
-        <section className="instructions">
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos provident nisi
-                voluptatem est nostrum optio perferendis doloremque, delectus at, assumenda suscipit sit
-                odio ipsum error consequatur numquam vero impedit nulla?
-            </p>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium animi voluptatem quis
-                impedit amet in dicta soluta explicabo, fugit magni mollitia, pariatur eos, repellendus aut
-                esse recusandae minima eum eaque.
-            </p>
-        </section>
+        <>
+            <section className="instructions">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos provident nisi
+                    voluptatem est nostrum optio perferendis doloremque, delectus at, assumenda suscipit sit
+                    odio ipsum error consequatur numquam vero impedit nulla?
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium animi voluptatem quis
+                    impedit amet in dicta soluta explicabo, fugit magni mollitia, pariatur eos, repellendus aut
+                    esse recusandae minima eum eaque.
+                </p>
+            </section>
+            <Dummy calcErrors={props.calcErrors}></Dummy>
+        </>
     )
 }
 export default Instructions;
