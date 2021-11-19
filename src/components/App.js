@@ -56,6 +56,11 @@ function App() {
   };
   // end of handleLastLetter()
 
+  const handleInput = (value) => {
+    console.log('here');
+    setWord(value);
+  }
+
   const findLetters = (letter) => {
     return userLetters.find((userLetter) => {
       return userLetter === letter;
@@ -110,7 +115,9 @@ function App() {
           calcErrors={calcErrors}>
         </Game>} />
         <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
-        <Route path="/options" element={<Options calcErrors={calcErrors}></Options>}></Route>
+        <Route path="/options" element={<Options calcErrors={calcErrors} handleInput={handleInput}>
+        </Options>}>
+        </Route>
       </Routes>
       <Footer></Footer>
     </div>
