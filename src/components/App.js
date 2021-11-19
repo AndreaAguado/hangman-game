@@ -6,6 +6,7 @@ import Game from './Game';
 import Footer from './Footer';
 import Instructions from './Instructions';
 import { Routes, Route } from 'react-router-dom';
+import Options from './Options';
 
 
 
@@ -110,7 +111,7 @@ function App() {
           calcErrors={calcErrors}>
         </Game>} />
         <Route path="/instructions" element={<Instructions></Instructions>} />
-
+        <Route path="/options" element={<Options calcErrors={calcErrors}></Options>}></Route>
       </Routes>
       <Footer></Footer>
 

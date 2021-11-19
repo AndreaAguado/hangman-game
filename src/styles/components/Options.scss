@@ -1,0 +1,8 @@
+.options_page {
+  display: flex;
+  justify-content: center;
+  .options {
+    max-width: 30rem;
+    line-height: 2.25;
+  }
+}
