@@ -1,5 +1,5 @@
 import '../styles/components/Instructions.scss';
-
+import Dummy from "./Dummy";
 const Instructions = (props) => {
     return (
 
@@ -16,6 +16,7 @@ const Instructions = (props) => {
                     esse recusandae minima eum eaque.
                 </p>
             </section>
+            <Dummy calcErrors={props.calcErrors}></Dummy>
         </div>
 
     )

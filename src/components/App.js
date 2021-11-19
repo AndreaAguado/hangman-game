@@ -102,7 +102,6 @@ function App() {
   return (
     <div className="page">
       <Header></Header>
-
       <Routes>
         <Route path="/" element={<Game renderSolutionLetters={renderSolutionLetters}
           renderErrorLetters={renderErrorLetters}
@@ -110,11 +109,10 @@ function App() {
           lastLetter={lastLetter}
           calcErrors={calcErrors}>
         </Game>} />
-        <Route path="/instructions" element={<Instructions></Instructions>} />
+        <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path="/options" element={<Options calcErrors={calcErrors}></Options>}></Route>
       </Routes>
       <Footer></Footer>
-
     </div>
   );
 }
