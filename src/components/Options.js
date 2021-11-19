@@ -9,8 +9,6 @@ const Options = (props) => {
     return (
         <section className="options">
             <div className="options_container">
-                <h2 className="options_title">Estas son las opciones del juego
-                </h2>
                 <form onSubmit={(ev) => { ev.preventDefault() }}>
                     <label className="title" htmlFor="word">
                         Escribe aquí la palabra que hay que adivinar:
