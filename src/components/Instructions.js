@@ -1,9 +1,9 @@
 import '../styles/components/Instructions.scss';
-import Dummy from "./Dummy";
 
 const Instructions = (props) => {
     return (
-        <>
+
+        <div className="instructions_page">
             <section className="instructions">
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos provident nisi
@@ -16,8 +16,8 @@ const Instructions = (props) => {
                     esse recusandae minima eum eaque.
                 </p>
             </section>
-            <Dummy calcErrors={props.calcErrors}></Dummy>
-        </>
+        </div>
+
     )
 }
 export default Instructions;

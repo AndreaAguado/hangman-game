@@ -109,7 +109,7 @@ function App() {
           lastLetter={lastLetter}
           calcErrors={calcErrors}>
         </Game>} />
-        <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
+        <Route path="/instructions" element={<Instructions></Instructions>} />
 
       </Routes>
       <Footer></Footer>

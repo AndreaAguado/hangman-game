@@ -1,8 +1,13 @@
-.instructions {
-  max-width: 30rem;
-  line-height: 2.25;
+.instructions_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .instructions {
+    max-width: 30rem;
+    line-height: 2.25;
 
-  p {
-    padding-bottom: 2rem;
+    p {
+      padding-bottom: 2rem;
+    }
   }
 }
