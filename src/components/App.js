@@ -7,6 +7,7 @@ import Game from './Game';
 import Footer from './Footer';
 import Instructions from './Instructions';
 import Options from './Options';
+import NotFoundPage from './NotFoundPage';
 
 
 
@@ -119,8 +120,8 @@ function App() {
         </Game>} />
         <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path="/options" element={<Options calcErrors={calcErrors} handleInput={handleInput}>
-        </Options>}>
-        </Route>
+        </Options>} />
+        <Route path='*' element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
       </Routes>
       <Footer></Footer>
     </div>
