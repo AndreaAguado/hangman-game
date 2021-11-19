@@ -57,8 +57,9 @@ function App() {
   // end of handleLastLetter()
 
   const handleInput = (value) => {
-    console.log('here');
     setWord(value);
+    setLastLetter('');
+    setUserLetters([]);
   }
 
   const findLetters = (letter) => {
