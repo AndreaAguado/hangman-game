@@ -22,9 +22,10 @@ function App() {
     })
   }, []);
 
+  // start of handleLastLetter()
   const handleLastLetter = (ev) => {
     setLastLetter(ev.target.value);
-    const valido = validar();
+    const valido = validar(ev.target.value);
     if (valido) {
       const isIn = userLetters.find((userLetter) => {
         return userLetter === ev.target.value;
@@ -33,27 +34,28 @@ function App() {
         setUserLetters([...userLetters, ev.target.value]);
       }
     }
-
-    function validar() {
-      let isValid;
-      // pattern to match:
-      const pattern = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1]$');
-      //if input is empty it won't be valid:
-      if (!ev.target.value) {
-        isValid = false;
-      } else {
-        //if input doesn't match the permitted pattern it won't be valid:
-        if (!pattern.test(ev.target.value)) {
-          isValid = false;
-        } else {
-          isValid = true;
-        }
-      }
-      return isValid;
-    }
-
   };
   // end of handleLastLetter()
+
+  // start of validar()
+  function validar(value) {
+    let isValid;
+    // pattern to match:
+    const pattern = new RegExp('^[a-zA-ZÀ-ÿ\u00f1\u00d1]$');
+    //if input is empty it won't be valid:
+    if (!value) {
+      isValid = false;
+    } else {
+      //if input doesn't match the permitted pattern it won't be valid:
+      if (!pattern.test(value)) {
+        isValid = false;
+      } else {
+        isValid = true;
+      }
+    }
+    return isValid;
+  }
+  // end of validar()
 
   const handleInput = (value) => {
     setWord(value);
@@ -66,6 +68,7 @@ function App() {
       return userLetter === letter;
     })
   }
+
 
   const renderSolutionLetters = () => {
     const wordLetters = word.split('');
