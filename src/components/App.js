@@ -1,18 +1,17 @@
 import '../styles/main.scss';
 import { useState, useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import callToApi from '../services/callToApi';
 import Header from './Header';
 import Game from './Game';
 import Footer from './Footer';
 import Instructions from './Instructions';
-import { Routes, Route } from 'react-router-dom';
 import Options from './Options';
 
 
 
 function App() {
   let nErrors;
-  // let wrongLetters;
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
