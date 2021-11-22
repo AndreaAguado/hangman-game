@@ -112,14 +112,14 @@ function App() {
     <div className="page">
       <Header></Header>
       <Routes>
-        <Route path="/" element={<Game renderSolutionLetters={renderSolutionLetters}
+        <Route path='/' element={<Game renderSolutionLetters={renderSolutionLetters}
           renderErrorLetters={renderErrorLetters}
           handleLastLetter={handleLastLetter}
           lastLetter={lastLetter}
           calcErrors={calcErrors}>
         </Game>} />
-        <Route path="/instructions" element={<Instructions calcErrors={calcErrors}></Instructions>} />
-        <Route path="/options" element={<Options calcErrors={calcErrors} handleInput={handleInput}>
+        <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
+        <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>
         </Options>} />
         <Route path='*' element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
       </Routes>
