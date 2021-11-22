@@ -112,7 +112,7 @@ function App() {
     <div className="page">
       <Header></Header>
       <Routes>
-        <Route path='/hangman-game' element={<Game renderSolutionLetters={renderSolutionLetters}
+        <Route path='/' element={<Game renderSolutionLetters={renderSolutionLetters}
           renderErrorLetters={renderErrorLetters}
           handleLastLetter={handleLastLetter}
           lastLetter={lastLetter}
