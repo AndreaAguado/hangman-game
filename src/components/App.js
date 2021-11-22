@@ -64,8 +64,20 @@ function App() {
     setUserLetters([]);
   }
 
+  const replaceAccents = (str) => {
+    str = str.toLocaleLowerCase();
+    str = str.replace(/[àáâãäå]/, "a");
+    str = str.replace(/[èéêë]/, "e");
+    str = str.replace(/[ìíîï]/, "i");
+    str = str.replace(/[òóôö]/, "o");
+    str = str.replace(/[ùúûü]/, "u");
+    str = str.replace(/[ç]/, "c");
+    return str;
+  }
+
   const findLetters = (letter) => {
     return userLetters.find((userLetter) => {
+      letter = replaceAccents(letter);
       return userLetter === letter;
     })
   }
