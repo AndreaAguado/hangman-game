@@ -2,9 +2,9 @@ import '../styles/main.scss';
 import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import callToApi from '../services/callToApi';
-// import Header from './Header';
+import Header from './Header';
 import Game from './Game';
-// import Footer from './Footer';
+import Footer from './Footer';
 import Instructions from './Instructions';
 import Options from './Options';
 import NotFoundPage from './NotFoundPage';
@@ -110,7 +110,7 @@ function App() {
 
   return (
     <div className="page">
-      {/* <Header></Header> */}
+      <Header></Header>
       <Routes>
         <Route path='/' element={<Game renderSolutionLetters={renderSolutionLetters}
           renderErrorLetters={renderErrorLetters}
@@ -123,7 +123,7 @@ function App() {
         </Options>} />
         <Route path='*' element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
       </Routes>
-      {/* <Footer></Footer> */}
+      <Footer></Footer>
     </div>
   );
 }

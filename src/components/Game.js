@@ -2,12 +2,12 @@ import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
 import Form from './Form';
-import Header from './Header';
-import Footer from './Footer';
+// import Header from './Header';
+// import Footer from './Footer';
 const Game = (props) => {
     return (
         <div>
-            <Header></Header>
+            {/* <Header></Header> */}
             <main className="main">
                 <section>
                     <SolutionLetters renderSolutionLetters={props.renderSolutionLetters}></SolutionLetters>
@@ -16,7 +16,7 @@ const Game = (props) => {
                 </section>
                 <Dummy calcErrors={props.calcErrors}></Dummy>
             </main>
-            <Footer></Footer>
+            {/* <Footer></Footer> */}
         </div>
 
     )

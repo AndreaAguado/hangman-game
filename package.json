@@ -1,6 +1,6 @@
 {
   "name": "react-starter-kit",
-  "homepage": "./",
+  "homepage": "https://andreaaguado.github.io/hangman-game/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
