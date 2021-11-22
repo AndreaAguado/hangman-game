@@ -118,8 +118,8 @@ function App() {
           lastLetter={lastLetter}
           calcErrors={calcErrors}>
         </Game>} />
-        <Route path='/hangman-game/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
-        <Route path='/hangman-game/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>
+        <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
+        <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>
         </Options>} />
         <Route path='*' element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
       </Routes>
