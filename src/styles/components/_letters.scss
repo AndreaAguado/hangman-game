@@ -1,6 +1,9 @@
 .solution,
 .feedback {
   margin-bottom: 3.75rem;
+  @media all and (max-width: 500px) {
+    margin-bottom: 1.5rem;
+  }
 }
 
 .letters {

@@ -12,12 +12,15 @@
     animation-name: borderBottomInput;
     animation-duration: 2s;
     animation-iteration-count: infinite;
+    @media all and (max-width: 500px) {
+      font-size: 2rem;
+    }
 
-    &[maxLength='1'] {
+    &[maxLength="1"] {
       width: 5rem;
     }
 
-    &[maxLength='15'] {
+    &[maxLength="15"] {
       width: 25rem;
     }
 

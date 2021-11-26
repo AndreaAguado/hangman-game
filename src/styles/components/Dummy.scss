@@ -7,6 +7,12 @@ $dummyTransitionTime: 1s;
   position: relative;
   min-width: 15rem;
   height: 25rem;
+  @media all and (max-width: 500px) {
+    margin-left: 0rem;
+    min-width: 12rem;
+    margin-bottom: 1rem;
+    order: -1;
+  }
 
   .line {
     position: absolute;
@@ -34,7 +40,7 @@ $dummyTransitionTime: 1s;
     color: $dummyDisabledColor;
     transition: color $dummyTransitionTime ease;
     &::before {
-      content: '×';
+      content: "×";
     }
   }
 
