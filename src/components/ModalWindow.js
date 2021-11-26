@@ -6,10 +6,10 @@ function ModalWindow(props) {
     const [hidden, setHidden] = useState('');
     const gameOverMessage = () => {
         if (props.calcErrors() > 13) {
-            return (<p>Has perdido :(</p>)
+            return "Has perdido :(";
         }
         else {
-            return (<p>Has ganado!! :D</p>)
+            return "Has ganado!! :D";
         }
     }
 
