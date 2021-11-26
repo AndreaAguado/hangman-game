@@ -1,7 +1,7 @@
 import '../styles/components/Loading.scss';
 const Loading = (props) => {
     const renderLoading = () => {
-        if (props.isLoading === false) {
+        if (props.isLoading) {
             return (<span className="loading" />);
         }
         else {
