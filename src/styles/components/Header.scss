@@ -3,4 +3,7 @@
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
+  @media all and (max-width: 768px) {
+    font-size: 2rem;
+  }
 }
