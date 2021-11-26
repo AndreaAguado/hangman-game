@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className="footer">
             <nav>
-                <ul>
+                <ul className="footer__menu">
                     <li className="footer__menu-item">
                         <NavLink className={(navData) => { return (navData.isActive ? "footer__menu-link active" : "footer__menu-link ") }} to="/">
                             A jugar

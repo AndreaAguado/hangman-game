@@ -19,4 +19,10 @@
       text-decoration: none;
     }
   }
+  @media all and (max-width: 500px) {
+    .footer__menu {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 }
