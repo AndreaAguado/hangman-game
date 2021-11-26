@@ -5,7 +5,7 @@ import { useState } from 'react';
 function ModalWindow(props) {
     const [hidden, setHidden] = useState('');
     const gameOverMessage = () => {
-        if (props.calcErrors() > 13) {
+        if (props.calcErrors() === 13) {
             return "Has perdido :(";
         }
         else {
