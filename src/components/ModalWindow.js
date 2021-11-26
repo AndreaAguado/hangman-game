@@ -1,5 +1,4 @@
 import '../styles/core/ModalWindow.scss';
-import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 
@@ -23,11 +22,9 @@ function ModalWindow(props) {
                 <div className='modal__content'>
                     <header className='modal__header'>
                         <h2 className='modal__title'>{gameOverMessage()}</h2>
-                        {/* <Link to='/'> */}
                         <div onClick={handleModal}>
                             <span className='modal__close icon fas fa-times'></span>
                         </div>
-                        {/* </Link> */}
                     </header>
                     <section className='modal__contents_section'>
                         {props.children}
