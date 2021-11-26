@@ -15,7 +15,6 @@ const Game = (props) => {
             </section>
             <Dummy calcErrors={props.calcErrors}></Dummy>
             <ModalWindow calcErrors={props.calcErrors}>
-                <p>Has perdido</p>
                 <p>El resultado era:</p>
             </ModalWindow>
         </main>

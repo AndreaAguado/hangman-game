@@ -111,13 +111,6 @@ function App() {
     })
   }
 
-  // const youLost = () => {
-  //   if (calcErrors() === 13) {
-  //     console.log('you lost');
-  //   }
-  // }
-  // youLost();
-
   const calcErrors = () => {
     nErrors = findWrongLetters().length;
     return nErrors;
