@@ -5,6 +5,16 @@ import Form from './Form';
 import ModalWindow from './ModalWindow';
 
 const Game = (props) => {
+    const renderModal = () => {
+        console.log(props.calcErrors());
+        if (props.calcErrors() === 13) {
+            return (
+                <ModalWindow calcErrors={props.calcErrors}>
+                    <p>El resultado era:</p>
+                </ModalWindow>
+            )
+        }
+    }
     return (
         <main className="main">
             <section>
@@ -14,9 +24,10 @@ const Game = (props) => {
                 <Form handleLastLetter={props.handleLastLetter} lastLetter={props.lastLetter}></Form>
             </section>
             <Dummy calcErrors={props.calcErrors}></Dummy>
-            <ModalWindow calcErrors={props.calcErrors}>
+            {renderModal()}
+            {/* <ModalWindow calcErrors={props.calcErrors}>
                 <p>El resultado era:</p>
-            </ModalWindow>
+            </ModalWindow> */}
         </main>
 
     )

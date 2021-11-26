@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 function ModalWindow(props) {
     const gameOverMessage = () => {
-        if (props.calcErrors === 13) {
+        if (props.calcErrors() === 13) {
             return (<p>Has perdido :(</p>)
         }
         else {
