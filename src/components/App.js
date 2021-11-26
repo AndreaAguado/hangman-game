@@ -125,7 +125,8 @@ function App() {
           handleLastLetter={handleLastLetter}
           lastLetter={lastLetter}
           calcErrors={calcErrors}
-          isLoading={isLoading}>
+          isLoading={isLoading}
+          word={word}>
         </Game>} />
         <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>

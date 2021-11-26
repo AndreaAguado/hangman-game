@@ -10,7 +10,7 @@ const Game = (props) => {
         if (props.calcErrors() === 13) {
             return (
                 <ModalWindow calcErrors={props.calcErrors}>
-                    <p>El resultado era:</p>
+                    <p>El resultado era: {props.word}</p>
                 </ModalWindow>
             )
         }
