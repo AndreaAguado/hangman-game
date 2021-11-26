@@ -2,6 +2,7 @@ import Dummy from './Dummy';
 import SolutionLetters from './SolutionLetters';
 import ErrorLetters from './ErrorLetters';
 import Form from './Form';
+import ModalWindow from './ModalWindow';
 
 const Game = (props) => {
     return (
@@ -13,6 +14,10 @@ const Game = (props) => {
                 <Form handleLastLetter={props.handleLastLetter} lastLetter={props.lastLetter}></Form>
             </section>
             <Dummy calcErrors={props.calcErrors}></Dummy>
+            <ModalWindow calcErrors={props.calcErrors}>
+                <p>Has perdido</p>
+                <p>El resultado era:</p>
+            </ModalWindow>
         </main>
 
     )
