@@ -1,25 +1,33 @@
 import '../styles/core/ModalWindow.scss';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function ModalWindow(props) {
+    const [hidden, setHidden] = useState('');
     const gameOverMessage = () => {
-        if (props.calcErrors() === 13) {
+        if (props.calcErrors() > 13) {
             return (<p>Has perdido :(</p>)
         }
         else {
             return (<p>Has ganado!! :D</p>)
         }
     }
+
+    const handleModal = () => {
+        setHidden('hidden');
+    }
     return (
-        <div className='modal'>
+        <div className={`modal ${hidden}`}>
             <div className='modal__dialog'>
                 <div className='modal__content'>
                     <header className='modal__header'>
                         <h2 className='modal__title'>{gameOverMessage()}</h2>
-                        <Link to='/'>
+                        {/* <Link to='/'> */}
+                        <div onClick={handleModal}>
                             <span className='modal__close icon fas fa-times'></span>
-                        </Link>
+                        </div>
+                        {/* </Link> */}
                     </header>
                     <section className='modal__contents_section'>
                         {props.children}
