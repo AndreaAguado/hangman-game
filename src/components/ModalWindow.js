@@ -13,7 +13,7 @@ function ModalWindow(props) {
                             <span className='modal__close icon fas fa-times'></span>
                         </Link>
                     </header>
-                    <section>
+                    <section className='modal__contents_section'>
                         {props.children}
                     </section>
                 </div>

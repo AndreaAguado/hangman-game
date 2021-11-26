@@ -14,8 +14,10 @@
       padding: 1rem;
       border-radius: 0.5rem;
       border: solid 3px white;
-      box-shadow: 0 0 2px 5px rgba(57, 255, 20, 0.4);
-      background-color: pink;
+      box-shadow: 0 0 6px 12px rgba(255, 255, 255, 0.4);
+      background-image: url("../images/blackboard.jpg");
+      background-size: cover;
+      background-position: center center;
       width: 50%;
       @media all and (max-width: 1200px) {
         width: 80%;
@@ -25,7 +27,7 @@
         justify-content: space-between;
         margin-bottom: 1rem;
         padding-bottom: 0.5rem;
-        border-bottom: 1px solid red;
+        // border-bottom: 1px solid red;
         .modal__title {
           color: black;
           font-size: 30px;
@@ -35,17 +37,19 @@
         }
         .modal__close {
           padding: 6px 9px 6px 9px;
-          background-color: yellow;
           border-radius: 50%;
           font-size: 20px;
-          border: solid 2px black;
-          color: black;
+          border: solid 3px white;
         }
         .modal__close:hover {
-          box-shadow: 0 0 2px 2px rgba(255, 255, 0, 0.3);
-          border-color: orange;
-          color: blue;
+          box-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.3);
+          background-color: rgba(255, 255, 255, 0.247);
         }
+      }
+      .modal__contents_section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
     }
   }
