@@ -11,14 +11,17 @@ import NotFoundPage from './NotFoundPage';
 
 
 
+
 function App() {
   let nErrors;
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     callToApi().then(response => {
+      setIsLoading(false);
       setWord(response);
     })
   }, []);
@@ -128,7 +131,8 @@ function App() {
           renderErrorLetters={renderErrorLetters}
           handleLastLetter={handleLastLetter}
           lastLetter={lastLetter}
-          calcErrors={calcErrors}>
+          calcErrors={calcErrors}
+          isLoading={isLoading}>
         </Game>} />
         <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>

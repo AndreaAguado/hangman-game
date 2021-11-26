@@ -1,15 +1,18 @@
-import '../styles/components/loading.scss';
+import '../styles/components/Loading.scss';
 const Loading = (props) => {
     const renderLoading = () => {
-        if (props.isLoading) {
-            return (`<span className="loading" />`);
+        if (props.isLoading === false) {
+            return (<span className="loading" />);
         }
         else {
             return null;
         }
     }
     return (
-        { renderLoading }
+        <>
+            {renderLoading()}
+        </>
+
     )
 }
 export default Loading;
