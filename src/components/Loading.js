@@ -1,3 +1,4 @@
+import '../styles/components/loading.scss';
 const Loading = (props) => {
     const renderLoading = () => {
         if (props.isLoading) {
