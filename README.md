@@ -18,9 +18,9 @@ This page shows the typical hangman game but with a twist:
 - You can play by choosing a word for someone else to guess.
 - In the _instructions_ page you can read in more detail how to play.
 
-| Home                                                                                                         |                                                    Options                                                    |                                                                                                            Instructions |
-| :----------------------------------------------------------------------------------------------------------- | :-----------------------------------------------------------------------------------------------------------: | ----------------------------------------------------------------------------------------------------------------------: |
-| <img src="pageThumbnail.PNG" alt="Preview home"  position="left" style="margin-right: 10px; width: 450px" /> | <img src="optionsPreview.PNG" alt="Options page" position="right"  style="margin-right: 10px;width: 450px" /> | <img src="instructionsPreview.PNG" alt="Instructions page" position="right"  style="margin-right: 10px;width: 450px" /> |
+| Home                                                                                                                  |                                                        Options                                                         |                                                                                                                     Instructions |
+| :-------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------: | -------------------------------------------------------------------------------------------------------------------------------: |
+| <img src="./public/pageThumbnail.PNG" alt="Preview home"  position="left" style="margin-right: 10px; width: 450px" /> | <img src="./public/optionsPreview.PNG" alt="Options page" position="right"  style="margin-right: 10px;width: 450px" /> | <img src="./public/instructionsPreview.PNG" alt="Instructions page" position="right"  style="margin-right: 10px;width: 450px" /> |
 
 Hope you like my page, to see the final result visit [my github pages](https://andreaaguado.github.io/hangman-game/) 🤗
 
