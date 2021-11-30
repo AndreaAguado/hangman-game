@@ -8,7 +8,7 @@ function ModalWindow(props) {
         if (props.calcErrors() === 13) {
             return "Has perdido :(";
         }
-        else {
+        else if (props.hasWon) {
             return "Has ganado!! :D";
         }
     }

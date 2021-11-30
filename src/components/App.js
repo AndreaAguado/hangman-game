@@ -14,10 +14,12 @@ import NotFoundPage from './NotFoundPage';
 
 function App() {
   let nErrors;
+  let foundLetters = 1;
   const [lastLetter, setLastLetter] = useState('');
   const [word, setWord] = useState('');
   const [userLetters, setUserLetters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [hasWon, setHasWon] = useState(false);
 
   useEffect(() => {
     callToApi().then(response => {
@@ -35,6 +37,7 @@ function App() {
         return userLetter === ev.target.value;
       })
       if (!isIn) {
+        checkWon();
         setUserLetters([...userLetters, ev.target.value]);
       }
     }
@@ -115,6 +118,30 @@ function App() {
     nErrors = findWrongLetters().length;
     return nErrors;
   }
+  // const calcRights = (word) => {
+  //   console.log(nRights);
+  //   nRights = nRights + 1;
+  //   console.log(nRights);
+  //   if (nRights === word.length) {
+  //     console.log('has ganado');
+  //     return true;
+  //   }
+  //   else {
+  //     return false;
+  //   }
+  // }
+  const checkWon = () => {
+    const wordLetters = word.split('');
+    wordLetters.forEach((letter) => {
+      if (findLetters(letter)) {
+        foundLetters++;
+        console.log(foundLetters);
+      }
+    })
+    if (foundLetters === wordLetters.length) {
+      setHasWon(true);
+    }
+  }
 
   return (
     <div className="page">
@@ -126,7 +153,8 @@ function App() {
           lastLetter={lastLetter}
           calcErrors={calcErrors}
           isLoading={isLoading}
-          word={word}>
+          word={word}
+          hasWon={hasWon}>
         </Game>} />
         <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>

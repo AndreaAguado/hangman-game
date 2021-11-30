@@ -6,11 +6,17 @@ import ModalWindow from './ModalWindow';
 
 const Game = (props) => {
     const renderModal = () => {
-        console.log(props.calcErrors());
         if (props.calcErrors() === 13) {
             return (
-                <ModalWindow calcErrors={props.calcErrors}>
+                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon}>
                     <p>El resultado era: {props.word}</p>
+                </ModalWindow>
+            )
+        }
+        else if (props.hasWon) {
+            return (
+                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon}>
+                    <p>Felicidades</p>
                 </ModalWindow>
             )
         }
