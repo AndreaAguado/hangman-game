@@ -21,6 +21,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [hasWon, setHasWon] = useState(false);
   const [hidden, setHidden] = useState('');
+  const [hasLost, setHasLost] = useState(false);
 
   useEffect(() => {
     callToApi().then(response => {
@@ -33,10 +34,10 @@ function App() {
     if (hidden === 'hidden' && hasWon) {
       setHidden('');
     }
-    // else if (hidden === 'hidden' && hasWon) {
-    //   setHidden('');
-    // }
-  }, [hasWon, hidden]);
+    else if (hidden === 'hidden' && hasLost) {
+      setHidden('');
+    }
+  }, [hasWon, hidden, hasLost]);
 
   // start of handleLastLetter()
   const handleLastLetter = (ev) => {
@@ -48,6 +49,9 @@ function App() {
       })
       if (!isIn) {
         checkWon();
+        if (calcErrors() === 13) {
+          setHasLost(true);
+        }
         setUserLetters([...userLetters, ev.target.value]);
       }
     }
