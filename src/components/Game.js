@@ -8,14 +8,16 @@ const Game = (props) => {
     const renderModal = () => {
         if (props.calcErrors() === 13) {
             return (
-                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon} handleButton={props.handleButton}>
+                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon} handleButton={props.handleButton} handleModalVisibility={props.handleModalVisibility}
+                    hidden={props.hidden}>
                     <p>El resultado era: {props.word}</p>
                 </ModalWindow>
             )
         }
         else if (props.hasWon) {
             return (
-                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon} handleButton={props.handleButton}>
+                <ModalWindow calcErrors={props.calcErrors} hasWon={props.hasWon} handleButton={props.handleButton} handleModalVisibility={props.handleModalVisibility}
+                    hidden={props.hidden}>
                     <p>Felicidades</p>
                 </ModalWindow>
             )

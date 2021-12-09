@@ -1,9 +1,9 @@
 import '../styles/core/ModalWindow.scss';
-import { useState } from 'react';
+// import { useState } from 'react';
 
 
 function ModalWindow(props) {
-    const [hidden, setHidden] = useState('');
+    // const [hidden, setHidden] = useState('');
     const gameOverMessage = () => {
         if (props.calcErrors() === 13) {
             return "Has perdido :(";
@@ -14,13 +14,15 @@ function ModalWindow(props) {
     }
 
     const handleModal = () => {
-        setHidden('hidden');
+        // setHidden('hidden');
+        props.handleModalVisibility();
+
     }
     const handlePlayButton = () => {
         props.handleButton();
     }
     return (
-        <div className={`modal ${hidden}`}>
+        <div className={`modal ${props.hidden}`}>
             <div className='modal__dialog'>
                 <div className='modal__content'>
                     <header className='modal__header'>

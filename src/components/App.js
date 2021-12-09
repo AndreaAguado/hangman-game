@@ -20,6 +20,7 @@ function App() {
   const [userLetters, setUserLetters] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [hasWon, setHasWon] = useState(false);
+  const [hidden, setHidden] = useState('');
 
   useEffect(() => {
     callToApi().then(response => {
@@ -27,6 +28,15 @@ function App() {
       setWord(response);
     })
   }, []);
+
+  useEffect(() => {
+    if (hidden === 'hidden' && hasWon) {
+      setHidden('');
+    }
+    // else if (hidden === 'hidden' && hasWon) {
+    //   setHidden('');
+    // }
+  }, [hasWon, hidden]);
 
   // start of handleLastLetter()
   const handleLastLetter = (ev) => {
@@ -69,6 +79,10 @@ function App() {
     setLastLetter('');
     setUserLetters([]);
   }
+  const handleModalVisibility = () => {
+    setHidden('hidden');
+
+  }
 
   const handleButton = () => {
     callToApi().then(response => {
@@ -77,6 +91,8 @@ function App() {
     });
     setLastLetter('');
     setUserLetters([]);
+    setHasWon(false);
+    setHidden('hidden');
   }
 
   const replaceAccents = (str) => {
@@ -164,6 +180,8 @@ function App() {
           isLoading={isLoading}
           word={word}
           hasWon={hasWon}
+          handleModalVisibility={handleModalVisibility}
+          hidden={hidden}
           handleButton={handleButton}>
         </Game>} />
         <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
