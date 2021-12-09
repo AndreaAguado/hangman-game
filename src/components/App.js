@@ -143,18 +143,7 @@ function App() {
     nErrors = findWrongLetters().length;
     return nErrors;
   }
-  // const calcRights = (word) => {
-  //   console.log(nRights);
-  //   nRights = nRights + 1;
-  //   console.log(nRights);
-  //   if (nRights === word.length) {
-  //     console.log('has ganado');
-  //     return true;
-  //   }
-  //   else {
-  //     return false;
-  //   }
-  // }
+
   const checkWon = () => {
     const wordLetters = word.split('');
     wordLetters.forEach((letter) => {
