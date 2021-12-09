@@ -70,6 +70,15 @@ function App() {
     setUserLetters([]);
   }
 
+  const handleButton = () => {
+    callToApi().then(response => {
+      setIsLoading(false);
+      setWord(response);
+    });
+    setLastLetter('');
+    setUserLetters([]);
+  }
+
   const replaceAccents = (str) => {
     str = str.toLocaleLowerCase();
     str = str.replace(/[àáâãäå]/, "a");
@@ -154,7 +163,8 @@ function App() {
           calcErrors={calcErrors}
           isLoading={isLoading}
           word={word}
-          hasWon={hasWon}>
+          hasWon={hasWon}
+          handleButton={handleButton}>
         </Game>} />
         <Route path='/instructions' element={<Instructions calcErrors={calcErrors}></Instructions>} />
         <Route path='/options' element={<Options calcErrors={calcErrors} handleInput={handleInput}>

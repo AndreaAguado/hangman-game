@@ -16,6 +16,9 @@ function ModalWindow(props) {
     const handleModal = () => {
         setHidden('hidden');
     }
+    const handlePlayButton = () => {
+        props.handleButton();
+    }
     return (
         <div className={`modal ${hidden}`}>
             <div className='modal__dialog'>
@@ -27,6 +30,7 @@ function ModalWindow(props) {
                         </div>
                     </header>
                     <section className='modal__contents_section'>
+                        <button onClick={handlePlayButton}>Jugar de nuevo</button>
                         {props.children}
                     </section>
                 </div>
