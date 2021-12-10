@@ -49,10 +49,12 @@ function App() {
       })
       if (!isIn) {
         checkWon();
-        if (calcErrors() === 13) {
+        setUserLetters([...userLetters, ev.target.value]);
+        console.log(calcErrors());
+        if (calcErrors() === 12) {
+          console.log('ha perdido');
           setHasLost(true);
         }
-        setUserLetters([...userLetters, ev.target.value]);
       }
     }
   };
@@ -85,7 +87,8 @@ function App() {
   }
   const handleModalVisibility = () => {
     setHidden('hidden');
-
+    setHasLost(false);
+    setHasWon(false);
   }
 
   const handleButton = () => {
