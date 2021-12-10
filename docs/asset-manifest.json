@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "./static/css/main.34be9e8f.chunk.css",
-    "main.js": "./static/js/main.56f02bb2.chunk.js",
-    "main.js.map": "./static/js/main.56f02bb2.chunk.js.map",
-    "runtime-main.js": "./static/js/runtime-main.7ad783a2.js",
-    "runtime-main.js.map": "./static/js/runtime-main.7ad783a2.js.map",
-    "static/js/2.e5bd2c9a.chunk.js": "./static/js/2.e5bd2c9a.chunk.js",
-    "static/js/2.e5bd2c9a.chunk.js.map": "./static/js/2.e5bd2c9a.chunk.js.map",
-    "index.html": "./index.html",
-    "static/css/main.34be9e8f.chunk.css.map": "./static/css/main.34be9e8f.chunk.css.map",
-    "static/js/2.e5bd2c9a.chunk.js.LICENSE.txt": "./static/js/2.e5bd2c9a.chunk.js.LICENSE.txt",
-    "static/media/main.scss": "./static/media/KgTenThousandReasons-R1ll.152e9033.ttf",
-    "static/media/ModalWindow.scss": "./static/media/blackboard.7288f09f.jpg"
+    "main.css": "/hangman-game/static/css/main.75ee3f90.chunk.css",
+    "main.js": "/hangman-game/static/js/main.a8324957.chunk.js",
+    "main.js.map": "/hangman-game/static/js/main.a8324957.chunk.js.map",
+    "runtime-main.js": "/hangman-game/static/js/runtime-main.533dbd1c.js",
+    "runtime-main.js.map": "/hangman-game/static/js/runtime-main.533dbd1c.js.map",
+    "static/js/2.e5bd2c9a.chunk.js": "/hangman-game/static/js/2.e5bd2c9a.chunk.js",
+    "static/js/2.e5bd2c9a.chunk.js.map": "/hangman-game/static/js/2.e5bd2c9a.chunk.js.map",
+    "index.html": "/hangman-game/index.html",
+    "static/css/main.75ee3f90.chunk.css.map": "/hangman-game/static/css/main.75ee3f90.chunk.css.map",
+    "static/js/2.e5bd2c9a.chunk.js.LICENSE.txt": "/hangman-game/static/js/2.e5bd2c9a.chunk.js.LICENSE.txt",
+    "static/media/main.scss": "/hangman-game/static/media/KgTenThousandReasons-R1ll.152e9033.ttf",
+    "static/media/ModalWindow.scss": "/hangman-game/static/media/blackboard.7288f09f.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.7ad783a2.js",
+    "static/js/runtime-main.533dbd1c.js",
     "static/js/2.e5bd2c9a.chunk.js",
-    "static/css/main.34be9e8f.chunk.css",
-    "static/js/main.56f02bb2.chunk.js"
+    "static/css/main.75ee3f90.chunk.css",
+    "static/js/main.a8324957.chunk.js"
   ]
 }
