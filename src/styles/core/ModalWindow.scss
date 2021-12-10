@@ -48,6 +48,17 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        .modal__button {
+          padding: 5px;
+          background-color: #ffffff24;
+          border-radius: 10px;
+          border: solid 3px;
+          margin-top: 10px;
+          &:hover {
+            background-color: #ffffff49;
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }

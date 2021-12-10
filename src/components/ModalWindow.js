@@ -28,8 +28,8 @@ function ModalWindow(props) {
                         </div>
                     </header>
                     <section className='modal__contents_section'>
-                        <button onClick={handlePlayButton}>Jugar de nuevo</button>
                         {props.children}
+                        <button className='modal__button' onClick={handlePlayButton}>Jugar de nuevo</button>
                     </section>
                 </div>
             </div>
