@@ -49,7 +49,7 @@ function App() {
       })
       if (!isIn) {
         checkWon();
-        setUserLetters([...userLetters, ev.target.value]);
+        setUserLetters([...userLetters, ev.target.value.toLocaleLowerCase()]);
         console.log(calcErrors());
         if (calcErrors() === 12) {
           console.log('ha perdido');
