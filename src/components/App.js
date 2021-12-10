@@ -168,7 +168,7 @@ function App() {
     <div className="page">
       <Header></Header>
       <Routes>
-        <Route path={process.env.PUBLIC_URL + '/'} element={<Game renderSolutionLetters={renderSolutionLetters}
+        <Route path={`${process.env.PUBLIC_URL}/`} element={<Game renderSolutionLetters={renderSolutionLetters}
           renderErrorLetters={renderErrorLetters}
           handleLastLetter={handleLastLetter}
           lastLetter={lastLetter}
@@ -180,10 +180,10 @@ function App() {
           hidden={hidden}
           handleButton={handleButton}>
         </Game>} />
-        <Route path={process.env.PUBLIC_URL + '/instructions'} element={<Instructions calcErrors={calcErrors}></Instructions>} />
-        <Route path={process.env.PUBLIC_URL + '/options'} element={<Options calcErrors={calcErrors} handleInput={handleInput}>
+        <Route path={`${process.env.PUBLIC_URL}/instructions`} element={<Instructions calcErrors={calcErrors}></Instructions>} />
+        <Route path={`${process.env.PUBLIC_URL}/options`} element={<Options calcErrors={calcErrors} handleInput={handleInput}>
         </Options>} />
-        <Route path={process.env.PUBLIC_URL + '*'} element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
+        <Route path={`${process.env.PUBLIC_URL}/*`} element={<NotFoundPage calcErrors={calcErrors}></NotFoundPage>} />
       </Routes>
       <Footer></Footer>
     </div>
