@@ -1,6 +1,6 @@
 import '../styles/main.scss';
 import { useState, useEffect } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import callToApi from '../services/callToApi';
 import Header from './Header';
 import Game from './Game';
