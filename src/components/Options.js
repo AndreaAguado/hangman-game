@@ -1,5 +1,6 @@
 import '../styles/components/Options.scss';
 import Dummy from "./Dummy";
+import { Link } from 'react-router-dom';
 
 const Options = (props) => {
     const handleWordToGuess = (ev) => {
@@ -24,6 +25,7 @@ const Options = (props) => {
                         name="word"
                     />
                 </form>
+                <Link className="options_play_button" to="/"> A jugar</Link>
             </div>
             <Dummy calcErrors={props.calcErrors}></Dummy>
         </section>

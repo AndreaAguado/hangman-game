@@ -4,8 +4,31 @@
   @media all and (max-width: 500px) {
     flex-direction: column;
   }
+  &_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    @media all and (max-width: 500px) {
+      margin-top: 30px;
+    }
+  }
   .options_title {
     max-width: 30rem;
     line-height: 2.25;
+  }
+  &_play_button {
+    background-color: #ffffff24;
+    padding: 12px;
+    border: solid 3px white;
+    border-radius: 15px;
+    text-decoration: none;
+    &:hover {
+      background-color: #ffffff49;
+      transform: scale(1.1);
+    }
+    @media all and (max-width: 500px) {
+      margin-top: 40px;
+    }
   }
 }
