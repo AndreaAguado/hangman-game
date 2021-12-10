@@ -2,12 +2,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+  }
   .instructions {
     max-width: 30rem;
     line-height: 2.25;
-
+    @media all and (max-width: 500px) {
+      order: -2;
+    }
     p {
       padding-bottom: 2rem;
+      @media all and (max-width: 500px) {
+        padding-bottom: 1rem;
+      }
     }
   }
 }
