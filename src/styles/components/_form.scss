@@ -22,6 +22,9 @@
 
     &[maxLength="15"] {
       width: 25rem;
+      @media all and (max-width: 500px) {
+        width: 16rem;
+      }
     }
 
     &::selection {

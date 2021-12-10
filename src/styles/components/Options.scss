@@ -1,6 +1,9 @@
 .options {
   display: flex;
   justify-content: center;
+  @media all and (max-width: 500px) {
+    flex-direction: column;
+  }
   .options_title {
     max-width: 30rem;
     line-height: 2.25;
